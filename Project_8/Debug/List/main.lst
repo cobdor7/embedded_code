@@ -1,0 +1,1071 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V7.12.1.987/W32 for MSP430           30/Nov/2018  13:38:49
+# Copyright 1996-2018 IAR Systems AB.
+# PC-locked license - IAR Embedded Workbench for Texas Instruments MSP430, 8K KickStart Edition 7.12
+#
+#    __rt_version  =  3
+#    __double_size =  32
+#    __reg_r4      =  free
+#    __reg_r5      =  free
+#    __pic         =  no
+#    __core        =  430X
+#    __data_model  =  small
+#    __code_model  =  large
+#    Source file   =  
+#        C:\Users\Andrew\Desktop\“ECE-306_CodeProject_01
+#        directory\Project_8\main.c
+#    Command line  =  
+#        -f C:\Users\Andrew\AppData\Local\Temp\EW38D0.tmp
+#        ("C:\Users\Andrew\Desktop\“ECE-306_CodeProject_01
+#        directory\Project_8\main.c" -lC
+#        "C:\Users\Andrew\Desktop\“ECE-306_CodeProject_01
+#        directory\Project_8\Debug\List" -o
+#        "C:\Users\Andrew\Desktop\“ECE-306_CodeProject_01
+#        directory\Project_8\Debug\Obj" --no_cse --no_unroll --no_inline
+#        --no_code_motion --no_tbaa --debug -D__MSP430FR5994__ -e --double=32
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.0\430\lib\dlib\dl430xlsfn.h" --core=430X --data_model=small -On
+#        --multiplier=32 --hw_workaround=CPU40 --code_model=large)
+#    Locale        =  English_USA.1252
+#    List file     =  
+#        C:\Users\Andrew\Desktop\“ECE-306_CodeProject_01
+#        directory\Project_8\Debug\List\main.lst
+#    Object file   =  
+#        C:\Users\Andrew\Desktop\“ECE-306_CodeProject_01
+#        directory\Project_8\Debug\Obj\main.r43
+#
+###############################################################################
+
+C:\Users\Andrew\Desktop\“ECE-306_CodeProject_01 directory\Project_8\main.c
+      1          //------------------------------------------------------------------------------
+      2          //
+      3          //  Description: This file contains the Main Routine - "While" Operating System
+      4          //
+      5          //
+      6          //  Jim Carlson
+      7          //  Jan 2018
+      8          //  Built with IAR Embedded Workbench Version: V4.10A/W32 (7.11.2)
+      9          //------------------------------------------------------------------------------
+     10          
+     11          //------------------------------------------------------------------------------
+     12          #include  "msp430.h"
+
+   \                                 In  segment DATA16_AN, at 0x222
+   \   union <unnamed> _A_PBOUT_L
+   \                     _A_PBOUT_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x130
+   \   union <unnamed> _A_PM5CTL0_L
+   \                     _A_PM5CTL0_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x342
+   \   union <unnamed> _A_TA0CCTL0_L
+   \                     _A_TA0CCTL0_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x5c0
+   \   union <unnamed> _A_UCA0CTLW0_L
+   \                     _A_UCA0CTLW0_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x5c6
+   \   union <unnamed> _A_UCA0BRW_L
+   \                     _A_UCA0BRW_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x5c8
+   \   union <unnamed> _A_UCA0MCTLW_L
+   \                     _A_UCA0MCTLW_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x5ce
+   \   union <unnamed> _A_UCA0TXBUF_L
+   \                     _A_UCA0TXBUF_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x5da
+   \   union <unnamed> _A_UCA0IE_L
+   \                     _A_UCA0IE_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x620
+   \   union <unnamed> _A_UCA3CTLW0_L
+   \                     _A_UCA3CTLW0_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x626
+   \   union <unnamed> _A_UCA3BRW_L
+   \                     _A_UCA3BRW_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x628
+   \   union <unnamed> _A_UCA3MCTLW_L
+   \                     _A_UCA3MCTLW_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x62e
+   \   union <unnamed> _A_UCA3TXBUF_L
+   \                     _A_UCA3TXBUF_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x63a
+   \   union <unnamed> _A_UCA3IE_L
+   \                     _A_UCA3IE_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x63c
+   \   union <unnamed> _A_UCA3IFG_L
+   \                     _A_UCA3IFG_L:
+   \   000000                DS8 2
+     13          #include  "functions.c"
+
+   \                                 In  segment CODE, align 2
+   \   __cc_version2 void WheelsForward(void)
+   \                     WheelsForward:
+   \   000000   F2C040002202 BIC.B   #0x40, &0x222
+   \   000006   F2C010002202 BIC.B   #0x10, &0x222
+   \   00000C   F2D080002202 BIS.B   #0x80, &0x222
+   \   000012   F2D020002202 BIS.B   #0x20, &0x222
+   \   000018   1001         RETA
+   \   00001A                REQUIRE _A_PBOUT_L
+
+   \                                 In  segment CODE, align 2
+   \   __cc_version2 void WheelsStop(void)
+   \                     WheelsStop:
+   \   000000   F2C080002202 BIC.B   #0x80, &0x222
+   \   000006   F2C020002202 BIC.B   #0x20, &0x222
+   \   00000C   F2C040002202 BIC.B   #0x40, &0x222
+   \   000012   F2C010002202 BIC.B   #0x10, &0x222
+   \   000018   1001         RETA
+   \   00001A                REQUIRE _A_PBOUT_L
+
+   \                                 In  segment CODE, align 2
+   \   __cc_version2 void WheelsReverse(void)
+   \                     WheelsReverse:
+   \   000000   F2C080002202 BIC.B   #0x80, &0x222
+   \   000006   F2C020002202 BIC.B   #0x20, &0x222
+   \   00000C   F2D040002202 BIS.B   #0x40, &0x222
+   \   000012   F2D010002202 BIS.B   #0x10, &0x222
+   \   000018   1001         RETA
+   \   00001A                REQUIRE _A_PBOUT_L
+
+   \                                 In  segment CODE, align 2
+   \   __cc_version2 void TurnLeft(void)
+   \                     TurnLeft:
+   \   000000   F2C010002202 BIC.B   #0x10, &0x222
+   \   000006   F2C080002202 BIC.B   #0x80, &0x222
+   \   00000C   F2D040002202 BIS.B   #0x40, &0x222
+   \   000012   F2D020002202 BIS.B   #0x20, &0x222
+   \   000018   1001         RETA
+   \   00001A                REQUIRE _A_PBOUT_L
+
+   \                                 In  segment CODE, align 2
+   \   __cc_version2 void TurnRight(void)
+   \                     TurnRight:
+   \   000000   F2C040002202 BIC.B   #0x40, &0x222
+   \   000006   F2C020002202 BIC.B   #0x20, &0x222
+   \   00000C   F2D010002202 BIS.B   #0x10, &0x222
+   \   000012   F2D080002202 BIS.B   #0x80, &0x222
+   \   000018   1001         RETA
+   \   00001A                REQUIRE _A_PBOUT_L
+
+   \                                 In  segment CODE, align 2
+   \   __cc_version2 void HEXtoBCD(int)
+   \                     HEXtoBCD:
+   \   000000   0F43         MOV.W   #0x0, R15
+   \   000002   F2403000.... MOV.B   #0x30, &adc_char
+   \   000008   F2403000.... MOV.B   #0x30, &adc_char + 1
+   \   00000E   F2403000.... MOV.B   #0x30, &adc_char + 2
+   \   000014   F2403000.... MOV.B   #0x30, &adc_char + 3
+   \                     ??HEXtoBCD_0:
+   \   00001A   3C90E803     CMP.W   #0x3e8, R12
+   \   00001E   0C38         JL      ??HEXtoBCD_3
+   \   000020   3C5018FC     ADD.W   #0xfc18, R12
+   \   000024   1F53         ADD.W   #0x1, R15
+   \   000026   0E12         PUSH.W  R14
+   \   000028   C14F0000     MOV.B   R15, 0(SP)
+   \   00002C   3E41         POP.W   R14
+   \   00002E   7E503000     ADD.B   #0x30, R14
+   \   000032   C24E....     MOV.B   R14, &adc_char
+   \   000036   F13F         JMP     ??HEXtoBCD_0
+   \                     ??HEXtoBCD_3:
+   \   000038   0F43         MOV.W   #0x0, R15
+   \                     ??HEXtoBCD_1:
+   \   00003A   3C906400     CMP.W   #0x64, R12
+   \   00003E   0C38         JL      ??HEXtoBCD_4
+   \   000040   3C509CFF     ADD.W   #0xff9c, R12
+   \   000044   1F53         ADD.W   #0x1, R15
+   \   000046   0E12         PUSH.W  R14
+   \   000048   C14F0000     MOV.B   R15, 0(SP)
+   \   00004C   3E41         POP.W   R14
+   \   00004E   7E503000     ADD.B   #0x30, R14
+   \   000052   C24E....     MOV.B   R14, &adc_char + 1
+   \   000056   F13F         JMP     ??HEXtoBCD_1
+   \                     ??HEXtoBCD_4:
+   \   000058   0F43         MOV.W   #0x0, R15
+   \                     ??HEXtoBCD_2:
+   \   00005A   3C900A00     CMP.W   #0xa, R12
+   \   00005E   0C38         JL      ??HEXtoBCD_5
+   \   000060   3C50F6FF     ADD.W   #0xfff6, R12
+   \   000064   1F53         ADD.W   #0x1, R15
+   \   000066   0E12         PUSH.W  R14
+   \   000068   C14F0000     MOV.B   R15, 0(SP)
+   \   00006C   3E41         POP.W   R14
+   \   00006E   7E503000     ADD.B   #0x30, R14
+   \   000072   C24E....     MOV.B   R14, &adc_char + 2
+   \   000076   F13F         JMP     ??HEXtoBCD_2
+   \                     ??HEXtoBCD_5:
+   \   000078   0E12         PUSH.W  R14
+   \   00007A   C14C0000     MOV.B   R12, 0(SP)
+   \   00007E   3E41         POP.W   R14
+   \   000080   7E503000     ADD.B   #0x30, R14
+   \   000084   C24E....     MOV.B   R14, &adc_char + 3
+   \   000088   1001         RETA
+     14          #include <string.h>
+     15          #include "macros.h"
+     16          
+     17          
+     18          
+     19          // Global Variables
+     20          extern volatile unsigned int ADC_Thumb;
+     21          extern volatile unsigned int ADC_Right_Detector;
+     22          extern volatile unsigned int ADC_Left_Detector;
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     23          volatile unsigned int UCA3_index;
+   \                     UCA3_index:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     24          volatile unsigned int UCA0_index;
+   \                     UCA0_index:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     25          char test_command[10];
+   \                     test_command:
+   \   000000                DS8 10
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     26          volatile unsigned int usb_rx_ring_wr;
+   \                     usb_rx_ring_wr:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     27          volatile unsigned int usb_tx_ring_wr;
+   \                     usb_tx_ring_wr:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     28          volatile unsigned int usb_tx_ring_rd;
+   \                     usb_tx_ring_rd:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     29          volatile char USB_Char_Rx[SMALL_RING_SIZE] ;
+   \                     USB_Char_Rx:
+   \   000000                DS8 16
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     30          volatile char USBCommand[10] ;
+   \                     USBCommand:
+   \   000000                DS8 10
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     31          volatile char USBTX[10] ;
+   \                     USBTX:
+   \   000000                DS8 10
+     32          
+     33          
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     34          volatile char slow_input_down;
+   \                     slow_input_down:
+   \   000000                DS8 1
+     35          extern char display_line[CASE4][CASE11];
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     36          char adc_char[10];
+   \                     adc_char:
+   \   000000                DS8 10
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     37          volatile char right_sensor[CASE4];
+   \                     right_sensor:
+   \   000000                DS8 4
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     38          volatile char left_sensor[CASE4];
+   \                     left_sensor:
+   \   000000                DS8 4
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     39          volatile char pot[CASE4];
+   \                     pot:
+   \   000000                DS8 4
+     40          extern char *display[CASE4];
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     41          unsigned char display_mode;
+   \                     display_mode:
+   \   000000                DS8 1
+     42          extern unsigned int  displaybutton2;
+     43          extern unsigned int  displaybutton1;
+     44          extern volatile unsigned char display_changed;
+     45          extern volatile unsigned char update_display;
+     46          extern volatile unsigned int update_display_count;
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     47          volatile unsigned int Time_Sequence;
+   \                     Time_Sequence:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     48          volatile unsigned int TA0CCR0counter ;
+   \                     TA0CCR0counter:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     49          volatile unsigned int TA0CCR1counter ;
+   \                     TA0CCR1counter:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     50          volatile unsigned int TA1CCR0counter ;
+   \                     TA1CCR0counter:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     51          volatile unsigned int TA1CCR1counter ;
+   \                     TA1CCR1counter:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     52          volatile unsigned int Button1DebounceCount;
+   \                     Button1DebounceCount:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     53          volatile unsigned int Button2DebounceCount;
+   \                     Button2DebounceCount:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     54          volatile unsigned char Button1Debounce;
+   \                     Button1Debounce:
+   \   000000                DS8 1
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     55          volatile unsigned char Button2Debounce;
+   \                     Button2Debounce:
+   \   000000                DS8 1
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     56          volatile unsigned char switch_LCD;
+   \                     switch_LCD:
+   \   000000                DS8 1
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     57          volatile unsigned int Last_Time_Sequence;
+   \                     Last_Time_Sequence:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     58          volatile unsigned char Button1Pressed;
+   \                     Button1Pressed:
+   \   000000                DS8 1
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     59          volatile unsigned char Button2Pressed;
+   \                     Button2Pressed:
+   \   000000                DS8 1
+     60          extern volatile char one_time;
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     61          unsigned int test_value;
+   \                     test_value:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     62          char pwm_state;
+   \                     pwm_state:
+   \   000000                DS8 1
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     63          char chosen_direction;
+   \                     chosen_direction:
+   \   000000                DS8 1
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     64          char change;
+   \                     change:
+   \   000000                DS8 1
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     65          char rstate = FALSE;
+   \                     rstate:
+   \   000000                DS8 1
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     66          int ADC_Left = 0;
+   \                     ADC_Left:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     67          int ADC_Right = 0;
+   \                     ADC_Right:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_I, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+     68          unsigned int stuff1 = 4;
+   \                     stuff1:
+   \   000000                DS8 2
+   \   000002                REQUIRE `?<Initializer for stuff1>`
+
+   \                                 In  segment DATA16_I, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+     69          unsigned int stuff2 = 0x5551;
+   \                     stuff2:
+   \   000000                DS8 2
+   \   000002                REQUIRE `?<Initializer for stuff2>`
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     70          char BaudBool = 0;
+   \                     BaudBool:
+   \   000000                DS8 1
+     71          
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     72          volatile unsigned int usb_rx_ring_rd;
+   \                     usb_rx_ring_rd:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     73          char USB_Char_Tx[LARGE_RING_SIZE];
+   \                     USB_Char_Tx:
+   \   000000                DS8 16
+     74          
+
+   \                                 In  segment CODE, align 2
+     75          void main(void){
+   \                     main:
+     76          //------------------------------------------------------------------------------
+     77          // Main Program
+     78          // This is the main routine for the program. Execution of code starts here.
+     79          // The operating system is Back Ground Fore Ground.
+     80          //
+     81          //------------------------------------------------------------------------------
+     82          // Disable the GPIO power-on default high-impedance mode to activate
+     83          // previously configured port settings
+     84            PM5CTL0 &= ~LOCKLPM5;
+   \   000000   92C33001     BIC.W   #0x1, &0x130
+     85            Init_Ports();                        // Initialize Ports
+   \   000004   ........     CALLA   #Init_Ports
+     86            Init_Clocks();                       // Initialize Clock System
+   \   000008   ........     CALLA   #Init_Clocks
+     87            Init_Conditions();                   // Initialize Variables and Initial Conditions
+   \   00000C   ........     CALLA   #Init_Conditions
+     88            Init_LCD();   
+   \   000010   ........     CALLA   #Init_LCD
+     89            Init_Timer_A0();
+   \   000014   ........     CALLA   #Init_Timer_A0
+     90            //Init_ADC();
+     91            Init_Serial_UCA0(); // Initialize Serial Port for USBInit_Serial_UCA3(void
+   \   000018   ........     CALLA   #Init_Serial_UCA0
+     92            Init_Serial_UCA3();
+   \   00001C   ........     CALLA   #Init_Serial_UCA3
+     93            //strcpy(display_line[LINE2], "   Baud   ");
+     94            TA0CCTL0 ON CCIE;
+   \   000020   B2D010004203 BIS.W   #0x10, &0x342
+     95           strcpy(display_line[LINE0], "          ");
+   \   000026   3D40....     MOV.W   #`?<Constant "          ">`, R13
+   \   00002A   3C40....     MOV.W   #display_line, R12
+   \   00002E   ........     CALLA   #strcpy
+     96            update_string(display_line[LINE0], LOW);
+   \   000032   0D43         MOV.W   #0x0, R13
+   \   000034   ........     CALLA   #update_string
+     97             // P8OUT ON IR_LED;
+     98            enable_display_update();
+   \   000038   ........     CALLA   #enable_display_update
+     99            Display_Update(FALSE,FALSE,FALSE,FALSE);
+   \   00003C   4F43         MOV.B   #0x0, R15
+   \   00003E   4E43         MOV.B   #0x0, R14
+   \   000040   4D43         MOV.B   #0x0, R13
+   \   000042   4C43         MOV.B   #0x0, R12
+   \   000044   ........     CALLA   #Display_Update
+    100          
+    101            
+    102            UCA3_index = 0;
+   \   000048   8243....     MOV.W   #0x0, &UCA3_index
+    103            
+    104            //UCA3IE ON UCRXIE; // Enable RX interrupt
+    105            
+    106          //UCA3_index = 0;
+    107          UCA3IE |= UCTXIE; // Enable RX interrupt
+   \   00004C   A2D33A06     BIS.W   #0x2, &0x63a
+    108          UCA3TXBUF = test_command[0];
+   \   000050   5F42....     MOV.B   &test_command, R15
+   \   000054   4F4F         MOV.B   R15, R15
+   \   000056   824F2E06     MOV.W   R15, &0x62e
+    109          
+    110           // for(;;){
+    111           //  UCA0TXBUF = 'U';
+    112           // }
+    113            
+    114            strcpy(display_line[LINE0], "  Waiting ");
+   \   00005A   3D40....     MOV.W   #`?<Constant "  Waiting ">`, R13
+   \   00005E   3C40....     MOV.W   #display_line, R12
+   \   000062   ........     CALLA   #strcpy
+    115            strcpy(display_line[LINE3], "  115200  ");
+   \   000066   3D40....     MOV.W   #`?<Constant "  115200  ">`, R13
+   \   00006A   3C40....     MOV.W   #display_line + 33, R12
+   \   00006E   ........     CALLA   #strcpy
+    116             UCA3IE ON UCTXIE;
+   \   000072   A2D33A06     BIS.W   #0x2, &0x63a
+    117             //UCA3IE ON UCRXIE;
+    118            while(ALWAYS) 
+    119            {       
+    120             
+    121              // Can the Operating
+    122              
+    123              switch(rstate)
+   \                     ??main_0:
+   \   000076   5E42....     MOV.B   &rstate, R14
+   \   00007A   5E83         SUB.B   #0x1, R14
+   \   00007C   0724         JEQ     ??main_3
+   \   00007E   5E83         SUB.B   #0x1, R14
+   \   000080   0D24         JEQ     ??main_4
+   \   000082   5E83         SUB.B   #0x1, R14
+   \   000084   3E24         JEQ     ??main_5
+   \   000086   5E83         SUB.B   #0x1, R14
+   \   000088   5824         JEQ     ??main_6
+   \   00008A   643C         JMP     ??main_2
+    124              {
+    125             
+    126              case CASE1:
+    127              // UCA0IFG ON UCTXIFG;
+    128               // for(int i = 0; i< 10; i++){
+    129               //   out_character(USBTX[i]);
+    130               // }
+    131                UCA3_index = 0;
+   \                     ??main_3:
+   \   00008C   8243....     MOV.W   #0x0, &UCA3_index
+    132          
+    133                 UCA3IE ON UCTXIE;
+   \   000090   A2D33A06     BIS.W   #0x2, &0x63a
+    134                 //UCA3IV ON UCTXIFG;
+    135                rstate = 3;
+   \   000094   F2400300.... MOV.B   #0x3, &rstate
+    136                break;
+   \   00009A   ED3F         JMP     ??main_0
+    137              case CASE2:
+    138                if(BaudBool)
+   \                     ??main_4:
+   \   00009C   C293....     CMP.B   #0x0, &BaudBool
+   \   0000A0   1524         JEQ     ??main_7
+    139                {
+    140                  stuff1 = 4;
+   \   0000A2   A242....     MOV.W   #0x4, &stuff1
+    141                  stuff2 = 0x5551;
+   \   0000A6   B2405155.... MOV.W   #0x5551, &stuff2
+    142                 // strcpy(display_line[LINE0], "          ");
+    143                  Init_Serial_UCA3();
+   \   0000AC   ........     CALLA   #Init_Serial_UCA3
+    144                  strcpy(display_line[LINE3], "  115200  ");
+   \   0000B0   3D40....     MOV.W   #`?<Constant "  115200  ">`, R13
+   \   0000B4   3C40....     MOV.W   #display_line + 33, R12
+   \   0000B8   ........     CALLA   #strcpy
+    145                  UCA3IE ON UCTXIE; // Enable TX interrupt
+   \   0000BC   A2D33A06     BIS.W   #0x2, &0x63a
+    146                  //UCA3TXBUF = test_command[0];
+    147                  update_string(display_line[LINE3], LINE3);
+   \   0000C0   3D400300     MOV.W   #0x3, R13
+   \   0000C4   3C40....     MOV.W   #display_line + 33, R12
+   \   0000C8   ........     CALLA   #update_string
+    148                   
+    149                }
+    150                if(!BaudBool)
+   \                     ??main_7:
+   \   0000CC   C293....     CMP.B   #0x0, &BaudBool
+   \   0000D0   1520         JNE     ??main_8
+    151                {
+    152                  stuff1 = 1;
+   \   0000D2   9243....     MOV.W   #0x1, &stuff1
+    153                  stuff2 = 0x4A11;
+   \   0000D6   B240114A.... MOV.W   #0x4a11, &stuff2
+    154          
+    155                  //strcpy(display_line[LINE0], "          ");
+    156                  Init_Serial_UCA3();
+   \   0000DC   ........     CALLA   #Init_Serial_UCA3
+    157                  strcpy(display_line[LINE3], "  406800  ");
+   \   0000E0   3D40....     MOV.W   #`?<Constant "  406800  ">`, R13
+   \   0000E4   3C40....     MOV.W   #display_line + 33, R12
+   \   0000E8   ........     CALLA   #strcpy
+    158                  UCA3IE ON UCTXIE; // Enable TX interrupt
+   \   0000EC   A2D33A06     BIS.W   #0x2, &0x63a
+    159                  //UCA3TXBUF = test_command[0]; 
+    160                  update_string(display_line[LINE3], LINE3);
+   \   0000F0   3D400300     MOV.W   #0x3, R13
+   \   0000F4   3C40....     MOV.W   #display_line + 33, R12
+   \   0000F8   ........     CALLA   #update_string
+    161                }
+    162                rstate = 0;
+   \                     ??main_8:
+   \   0000FC   C243....     MOV.B   #0x0, &rstate
+    163                break;
+   \   000100   BA3F         JMP     ??main_0
+    164              case CASE3:
+    165                UCA3IE ON UCTXIE;
+   \                     ??main_5:
+   \   000102   A2D33A06     BIS.W   #0x2, &0x63a
+    166                strcpy(display_line[LINE0], "Transmited");
+   \   000106   3D40....     MOV.W   #`?<Constant "Transmited">`, R13
+   \   00010A   3C40....     MOV.W   #display_line, R12
+   \   00010E   ........     CALLA   #strcpy
+    167                //strcpy(display_line[LINE0], " Recieved ");
+    168                for(int i = 0; i< 10; i++){
+   \   000112   0F43         MOV.W   #0x0, R15
+   \                     ??main_1:
+   \   000114   3F900A00     CMP.W   #0xa, R15
+   \   000118   0534         JGE     ??main_9
+    169                  display_line[2][i] = test_command[i];
+   \   00011A   DF4F........ MOV.B   test_command(R15), display_line + 22(R15)
+    170                }
+   \   000120   1F53         ADD.W   #0x1, R15
+   \   000122   F83F         JMP     ??main_1
+    171                update_string(display_line[LINE0], LINE0);
+   \                     ??main_9:
+   \   000124   0D43         MOV.W   #0x0, R13
+   \   000126   3C40....     MOV.W   #display_line, R12
+   \   00012A   ........     CALLA   #update_string
+    172                update_string(display_line[LINE2], LINE2);
+   \   00012E   2D43         MOV.W   #0x2, R13
+   \   000130   3C40....     MOV.W   #display_line + 22, R12
+   \   000134   ........     CALLA   #update_string
+    173                break;
+   \   000138   9E3F         JMP     ??main_0
+    174              case CASE4:
+    175                RecieveTransmit();
+   \                     ??main_6:
+   \   00013A   ........     CALLA   #RecieveTransmit
+    176                strcpy(display_line[LINE0], " Recieved ");
+   \   00013E   3D40....     MOV.W   #`?<Constant " Recieved ">`, R13
+   \   000142   3C40....     MOV.W   #display_line, R12
+   \   000146   ........     CALLA   #strcpy
+    177                rstate = 0;
+   \   00014A   C243....     MOV.B   #0x0, &rstate
+    178                Init_Serial_UCA3();
+   \   00014E   ........     CALLA   #Init_Serial_UCA3
+    179          
+    180                break;
+   \   000152   913F         JMP     ??main_0
+    181              default :
+    182                update_string(display_line[LINE0], LINE0);
+   \                     ??main_2:
+   \   000154   0D43         MOV.W   #0x0, R13
+   \   000156   3C40....     MOV.W   #display_line, R12
+   \   00015A   ........     CALLA   #update_string
+    183                update_string(display_line[LINE1], LINE1);
+   \   00015E   1D43         MOV.W   #0x1, R13
+   \   000160   3C40....     MOV.W   #display_line + 11, R12
+   \   000164   ........     CALLA   #update_string
+    184                update_string(display_line[LINE2], LINE2);
+   \   000168   2D43         MOV.W   #0x2, R13
+   \   00016A   3C40....     MOV.W   #display_line + 22, R12
+   \   00016E   ........     CALLA   #update_string
+    185                update_string(display_line[LINE3], LINE3);
+   \   000172   3D400300     MOV.W   #0x3, R13
+   \   000176   3C40....     MOV.W   #display_line + 33, R12
+   \   00017A   ........     CALLA   #update_string
+    186                break;
+   \   00017E   7B3F         JMP     ??main_0
+   \   000180   0343         NOP
+   \   000182                REQUIRE _A_PM5CTL0_L
+   \   000182                REQUIRE _A_TA0CCTL0_L
+   \   000182                REQUIRE _A_UCA3IE_L
+   \   000182                REQUIRE _A_UCA3TXBUF_L
+    187              }
+    188            }
+    189          }
+    190          
+    191          
+
+   \                                 In  segment CODE, align 2
+    192          void out_character(char character){
+   \                     out_character:
+   \                     ??out_character_0:
+    193          //------------------------------------------------------------------------------
+    194          
+    195            while (!(UCA3IFG & UCTXIFG));
+   \   000000   A2B33C06     BIT.W   #0x2, &0x63c
+   \   000004   FD2B         JNC     ??out_character_0
+    196           // while (!(UCA3IFG & UCTXCPTIFG));
+    197            UCA0TXBUF = character;
+   \   000006   4C4C         MOV.B   R12, R12
+   \   000008   824CCE05     MOV.W   R12, &0x5ce
+    198          //------------------------------------------------------------------------------
+    199          }
+   \   00000C   1001         RETA
+   \   00000E                REQUIRE _A_UCA3IFG_L
+   \   00000E                REQUIRE _A_UCA0TXBUF_L
+    200          
+    201          
+    202          
+
+   \                                 In  segment CODE, align 2
+    203          void Init_Serial_UCA0(void){
+   \                     Init_Serial_UCA0:
+    204            int i;
+    205            for(i=0; i<SMALL_RING_SIZE; i++){
+   \   000000   0F43         MOV.W   #0x0, R15
+   \                     ??Init_Serial_UCA0_0:
+   \   000002   3F901000     CMP.W   #0x10, R15
+   \   000006   0434         JGE     ??Init_Serial_UCA0_2
+    206            USB_Char_Rx[i] = 0x00; // USB Rx Buffer
+   \   000008   CF43....     MOV.B   #0x0, USB_Char_Rx(R15)
+    207          }
+   \   00000C   1F53         ADD.W   #0x1, R15
+   \   00000E   F93F         JMP     ??Init_Serial_UCA0_0
+    208            usb_rx_ring_wr = BEGINNING;
+   \                     ??Init_Serial_UCA0_2:
+   \   000010   8243....     MOV.W   #0x0, &usb_rx_ring_wr
+    209            usb_rx_ring_rd = BEGINNING;
+   \   000014   8243....     MOV.W   #0x0, &usb_rx_ring_rd
+    210            for(i=0; i<LARGE_RING_SIZE; i++){ // May not use this
+   \   000018   0F43         MOV.W   #0x0, R15
+   \                     ??Init_Serial_UCA0_1:
+   \   00001A   3F901000     CMP.W   #0x10, R15
+   \   00001E   0434         JGE     ??Init_Serial_UCA0_3
+    211            USB_Char_Tx[i] = 0x00; // USB Tx Buffer
+   \   000020   CF43....     MOV.B   #0x0, USB_Char_Tx(R15)
+    212          }
+   \   000024   1F53         ADD.W   #0x1, R15
+   \   000026   F93F         JMP     ??Init_Serial_UCA0_1
+    213            usb_tx_ring_wr = BEGINNING;
+   \                     ??Init_Serial_UCA0_3:
+   \   000028   8243....     MOV.W   #0x0, &usb_tx_ring_wr
+    214            usb_tx_ring_rd = BEGINNING;
+   \   00002C   8243....     MOV.W   #0x0, &usb_tx_ring_rd
+    215            // Configure UART 0
+    216            UCA0CTLW0 = 0; // Use word register
+   \   000030   8243C005     MOV.W   #0x0, &0x5c0
+    217            UCA0CTLW0 |= UCSSEL__SMCLK; // Set SMCLK as fBRCLK
+   \   000034   B2D08000C005 BIS.W   #0x80, &0x5c0
+    218            UCA0CTLW0 |= UCSWRST; // Set Software reset enable
+   \   00003A   92D3C005     BIS.W   #0x1, &0x5c0
+    219            //UCA0BRW = 52; // 9,600 Baud
+    220            UCA0BRW = 1; //460800
+   \   00003E   9243C605     MOV.W   #0x1, &0x5c6
+    221            // UCA0MCTLW = UCSx concatenate UCFx concatenate UCOS16;
+    222            // UCA0MCTLW = 0x49 concatenate 1 concatenate 1;
+    223            //UCA0MCTLW = 0x4911 ;
+    224            UCA0MCTLW = 0x4A11 ;
+   \   000042   B240114AC805 MOV.W   #0x4a11, &0x5c8
+    225            
+    226            UCA0CTL1 &= ~UCSWRST; // Release from reset
+   \   000048   D2C3C005     BIC.B   #0x1, &0x5c0
+    227            UCA0IE |= UCRXIE; // Enable RX interrupt
+   \   00004C   92D3DA05     BIS.W   #0x1, &0x5da
+    228          }
+   \   000050   1001         RETA
+   \   000052                REQUIRE _A_UCA0CTLW0_L
+   \   000052                REQUIRE _A_UCA0BRW_L
+   \   000052                REQUIRE _A_UCA0MCTLW_L
+   \   000052                REQUIRE _A_UCA0IE_L
+    229          
+
+   \                                 In  segment CODE, align 2
+    230          void Init_Serial_UCA3(void){
+   \                     Init_Serial_UCA3:
+    231            int i;
+    232            for(i=0; i<SMALL_RING_SIZE; i++){
+   \   000000   0F43         MOV.W   #0x0, R15
+   \                     ??Init_Serial_UCA3_0:
+   \   000002   3F901000     CMP.W   #0x10, R15
+   \   000006   0434         JGE     ??Init_Serial_UCA3_2
+    233            USB_Char_Rx[i] = 0x00; // USB Rx Buffer
+   \   000008   CF43....     MOV.B   #0x0, USB_Char_Rx(R15)
+    234          }
+   \   00000C   1F53         ADD.W   #0x1, R15
+   \   00000E   F93F         JMP     ??Init_Serial_UCA3_0
+    235            usb_rx_ring_wr = BEGINNING;
+   \                     ??Init_Serial_UCA3_2:
+   \   000010   8243....     MOV.W   #0x0, &usb_rx_ring_wr
+    236            usb_rx_ring_rd = BEGINNING;
+   \   000014   8243....     MOV.W   #0x0, &usb_rx_ring_rd
+    237            for(i=0; i<LARGE_RING_SIZE; i++){ // May not use this
+   \   000018   0F43         MOV.W   #0x0, R15
+   \                     ??Init_Serial_UCA3_1:
+   \   00001A   3F901000     CMP.W   #0x10, R15
+   \   00001E   0434         JGE     ??Init_Serial_UCA3_3
+    238            USB_Char_Tx[i] = 0x00; // USB Tx Buffer
+   \   000020   CF43....     MOV.B   #0x0, USB_Char_Tx(R15)
+    239          }
+   \   000024   1F53         ADD.W   #0x1, R15
+   \   000026   F93F         JMP     ??Init_Serial_UCA3_1
+    240            usb_tx_ring_wr = BEGINNING;
+   \                     ??Init_Serial_UCA3_3:
+   \   000028   8243....     MOV.W   #0x0, &usb_tx_ring_wr
+    241            usb_tx_ring_rd = BEGINNING;
+   \   00002C   8243....     MOV.W   #0x0, &usb_tx_ring_rd
+    242            // Configure UART 0
+    243            UCA3CTLW0 = 0; // Use word register
+   \   000030   82432006     MOV.W   #0x0, &0x620
+    244            UCA3CTLW0 |= UCSSEL__SMCLK; // Set SMCLK as fBRCLK
+   \   000034   B2D080002006 BIS.W   #0x80, &0x620
+    245            UCA3CTLW0 |= UCSWRST; // Set Software reset enable
+   \   00003A   92D32006     BIS.W   #0x1, &0x620
+    246            //UCA0BRW = 52; // 9,600 Baud
+    247            UCA3BRW = stuff1; //460800
+   \   00003E   9242....2606 MOV.W   &stuff1, &0x626
+    248            // UCA0MCTLW = UCSx concatenate UCFx concatenate UCOS16;
+    249            // UCA0MCTLW = 0x49 concatenate 1 concatenate 1;
+    250            //UCA0MCTLW = 0x4911 ;
+    251            UCA3MCTLW = stuff2 ;
+   \   000044   9242....2806 MOV.W   &stuff2, &0x628
+    252            
+    253            UCA3CTL1 &= ~UCSWRST; // Release from reset
+   \   00004A   D2C32006     BIC.B   #0x1, &0x620
+    254            UCA3IE |= UCRXIE; // Enable RX interrupt
+   \   00004E   92D33A06     BIS.W   #0x1, &0x63a
+    255          }
+   \   000052   1001         RETA
+   \   000054                REQUIRE _A_UCA3CTLW0_L
+   \   000054                REQUIRE _A_UCA3BRW_L
+   \   000054                REQUIRE _A_UCA3MCTLW_L
+   \   000054                REQUIRE _A_UCA3IE_L
+    256          
+
+   \                                 In  segment CODE, align 2
+    257          void RecieveTransmit(void)
+   \                     RecieveTransmit:
+    258          {
+    259            for(int i = 0; i< 10; i++){
+   \   000000   0F43         MOV.W   #0x0, R15
+   \                     ??RecieveTransmit_0:
+   \   000002   3F900A00     CMP.W   #0xa, R15
+   \   000006   0534         JGE     ??RecieveTransmit_2
+    260              display_line[1][i] = USBCommand[i];
+   \   000008   DF4F........ MOV.B   USBCommand(R15), display_line + 11(R15)
+    261            }
+   \   00000E   1F53         ADD.W   #0x1, R15
+   \   000010   F83F         JMP     ??RecieveTransmit_0
+    262             for(int i = 0; i< 10; i++){
+   \                     ??RecieveTransmit_2:
+   \   000012   0F43         MOV.W   #0x0, R15
+   \                     ??RecieveTransmit_1:
+   \   000014   3F900A00     CMP.W   #0xa, R15
+   \   000018   0534         JGE     ??RecieveTransmit_3
+    263              test_command[i] = USBCommand[i];
+   \   00001A   DF4F........ MOV.B   USBCommand(R15), test_command(R15)
+    264            }
+   \   000020   1F53         ADD.W   #0x1, R15
+   \   000022   F83F         JMP     ??RecieveTransmit_1
+    265          }
+   \                     ??RecieveTransmit_3:
+   \   000024   1001         RETA
+
+   \                                 In  segment DATA16_ID, align 2, align-sorted
+   \                     `?<Initializer for stuff1>`:
+   \   000000   0400         DC16 4
+
+   \                                 In  segment DATA16_ID, align 2, align-sorted
+   \                     `?<Initializer for stuff2>`:
+   \   000000   5155         DC16 21841
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+   \                     `?<Constant "          ">`:
+   \   000000   202020202020 DC8 "          "
+   \            2020202000  
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+   \                     `?<Constant "  Waiting ">`:
+   \   000000   202057616974 DC8 "  Waiting "
+   \            696E672000  
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+   \                     `?<Constant "  115200  ">`:
+   \   000000   202031313532 DC8 "  115200  "
+   \            3030202000  
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+   \                     `?<Constant "  406800  ">`:
+   \   000000   202034303638 DC8 "  406800  "
+   \            3030202000  
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+   \                     `?<Constant "Transmited">`:
+   \   000000   5472616E736D DC8 "Transmited"
+   \            6974656400  
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+   \                     `?<Constant " Recieved ">`:
+   \   000000   205265636965 DC8 " Recieved "
+   \            7665642000  
+    266          
+    267          
+    268          
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+      6   HEXtoBCD
+      4   Init_Serial_UCA0
+      4   Init_Serial_UCA3
+      4   RecieveTransmit
+      4   TurnLeft
+      4   TurnRight
+      4   WheelsForward
+      4   WheelsReverse
+      4   WheelsStop
+      4   main
+        4   -> Display_Update
+        4   -> Init_Clocks
+        4   -> Init_Conditions
+        4   -> Init_LCD
+        4   -> Init_Ports
+        4   -> Init_Serial_UCA0
+        4   -> Init_Serial_UCA3
+        4   -> Init_Timer_A0
+        4   -> RecieveTransmit
+        4   -> enable_display_update
+        4   -> strcpy
+        4   -> update_string
+      4   out_character
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      11  ?<Constant "          ">
+      11  ?<Constant "  115200  ">
+      11  ?<Constant "  406800  ">
+      11  ?<Constant "  Waiting ">
+      11  ?<Constant " Recieved ">
+      11  ?<Constant "Transmited">
+       2  ?<Initializer for stuff1>
+       2  ?<Initializer for stuff2>
+       2  ADC_Left
+       2  ADC_Right
+       1  BaudBool
+       1  Button1Debounce
+       2  Button1DebounceCount
+       1  Button1Pressed
+       1  Button2Debounce
+       2  Button2DebounceCount
+       1  Button2Pressed
+     138  HEXtoBCD
+      82  Init_Serial_UCA0
+      84  Init_Serial_UCA3
+       2  Last_Time_Sequence
+      38  RecieveTransmit
+       2  TA0CCR0counter
+       2  TA0CCR1counter
+       2  TA1CCR0counter
+       2  TA1CCR1counter
+       2  Time_Sequence
+      26  TurnLeft
+      26  TurnRight
+       2  UCA0_index
+       2  UCA3_index
+      10  USBCommand
+      10  USBTX
+      16  USB_Char_Rx
+      16  USB_Char_Tx
+      26  WheelsForward
+      26  WheelsReverse
+      26  WheelsStop
+       2  _A_PBOUT_L
+       2  _A_PM5CTL0_L
+       2  _A_TA0CCTL0_L
+       2  _A_UCA0BRW_L
+       2  _A_UCA0CTLW0_L
+       2  _A_UCA0IE_L
+       2  _A_UCA0MCTLW_L
+       2  _A_UCA0TXBUF_L
+       2  _A_UCA3BRW_L
+       2  _A_UCA3CTLW0_L
+       2  _A_UCA3IE_L
+       2  _A_UCA3IFG_L
+       2  _A_UCA3MCTLW_L
+       2  _A_UCA3TXBUF_L
+      10  adc_char
+       1  change
+       1  chosen_direction
+       1  display_mode
+       4  left_sensor
+     386  main
+      14  out_character
+       4  pot
+       1  pwm_state
+       4  right_sensor
+       1  rstate
+       1  slow_input_down
+       2  stuff1
+       2  stuff2
+       1  switch_LCD
+      10  test_command
+       2  test_value
+       2  usb_rx_ring_rd
+       2  usb_rx_ring_wr
+       2  usb_tx_ring_rd
+       2  usb_tx_ring_wr
+
+ 
+ 872 bytes in segment CODE
+  28 bytes in segment DATA16_AN
+  66 bytes in segment DATA16_C
+   4 bytes in segment DATA16_I
+   4 bytes in segment DATA16_ID
+ 130 bytes in segment DATA16_Z
+ 
+ 872 bytes of CODE  memory
+  70 bytes of CONST memory
+ 134 bytes of DATA  memory (+ 28 bytes shared)
+
+Errors: none
+Warnings: none

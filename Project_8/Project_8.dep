@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>2</fileVersion>
+    <fileChecksum>329666114</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$PROJ_DIR$\Debug\List\main.lst</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+            <file>$TOOLKIT_DIR$\inc\legacy.h</file>
+            <file>$TOOLKIT_DIR$\inc\msp430fr5994.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\ports.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\init.pbi</file>
+            <file>$PROJ_DIR$\functions.c</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\string.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
+            <file>$PROJ_DIR$\Debug\List\interrupts.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\interrupts.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\functions.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\interrupts.pbi</file>
+            <file>$TOOLKIT_DIR$\lib\dlib\dl430xlsfn.h</file>
+            <file>$TOOLKIT_DIR$\inc\in430.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\ports.pbi</file>
+            <file>$PROJ_DIR$\macros.h</file>
+            <file>$PROJ_DIR$\Debug\Exe\Project_8.d43</file>
+            <file>$PROJ_DIR$\Debug\Obj\init.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\Project_8.pbd</file>
+            <file>$TOOLKIT_DIR$\config\linker\lnk430fr5994.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\clocks.r43</file>
+            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\interrupts.c</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\clocks.pbi</file>
+            <file>$PROJ_DIR$\Debug\List\Project_8.map</file>
+            <file>$PROJ_DIR$\Debug\Obj\system.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+            <file>$PROJ_DIR$\main.c</file>
+            <file>$TOOLKIT_DIR$\lib\dlib\dl430xlsfn.r43</file>
+            <file>$PROJ_DIR$\clocks.c</file>
+            <file>$TOOLKIT_DIR$\config\linker\multiplier32.xcl</file>
+            <file>$PROJ_DIR$\init.c</file>
+            <file>$PROJ_DIR$\system.c</file>
+            <file>$TOOLKIT_DIR$\inc\msp430.h</file>
+            <file>$PROJ_DIR$\Debug\Exe\Project_8.ulp</file>
+            <file>$PROJ_DIR$\Debug\Obj\system.pbi</file>
+            <file>$PROJ_DIR$\Compiled\LCD.r43</file>
+            <file>$PROJ_DIR$\ports.c</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+        </outputs>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\Project_8.d43</name>
+            <outputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 30</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 23 36 24 20 11 42 9 4 31 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\interrupts.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 10 11</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 14</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 39 3 16 25 2 13 8 21 1 12 15 26 28 44 32 18</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 12 44 8 13 18 3 1 21 39 16 2 25 32 28 15 26</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 0 9</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 5</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 39 3 16 25 2 7 18 13 8 21 1 12 15 26 28 44 32</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 39 21 26 8 3 18 32 28 15 1 7 16 2 25 13 12 44</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\clocks.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 24</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 29</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\init.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 20</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 6</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\system.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 31</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 41</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\ports.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 4</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 17</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ULP430</name>
+                    <file> 40</file>
+                </tool>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 30 19</file>
+                </tool>
+            </outputs>
+        </file>
+    </configuration>
+    <configuration>
+        <name>Release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>XLINK</tool>
+        </forcedrebuild>
+    </configuration>
+</project>

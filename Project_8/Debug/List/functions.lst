@@ -1,0 +1,48 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V7.12.1.987/W32 for MSP430           16/Oct/2018  13:36:26
+# Copyright 1996-2018 IAR Systems AB.
+# PC-locked license - IAR Embedded Workbench for Texas Instruments MSP430, 8K KickStart Edition 7.12
+#
+#    __rt_version  =  3
+#    __double_size =  32
+#    __reg_r4      =  free
+#    __reg_r5      =  free
+#    __pic         =  no
+#    __core        =  430X
+#    __data_model  =  small
+#    __code_model  =  large
+#    Source file   =  
+#        C:\Users\Andrew\Desktop\“ECE-306_CodeProject_01
+#        directory\Homework_6\Compiled\functions.c
+#    Command line  =  
+#        -f C:\Users\Andrew\AppData\Local\Temp\EW1F7E.tmp
+#        ("C:\Users\Andrew\Desktop\“ECE-306_CodeProject_01
+#        directory\Homework_6\Compiled\functions.c" -lC
+#        "C:\Users\Andrew\Desktop\“ECE-306_CodeProject_01
+#        directory\Homework_6\Debug\List" -o
+#        "C:\Users\Andrew\Desktop\“ECE-306_CodeProject_01
+#        directory\Homework_6\Debug\Obj" --no_cse --no_unroll --no_inline
+#        --no_code_motion --no_tbaa --debug -D__MSP430FR5994__ -e --double=32
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.0\430\lib\dlib\dl430xlsfn.h" --core=430X --data_model=small -On
+#        --multiplier=32 --hw_workaround=CPU40 --code_model=large)
+#    Locale        =  English_USA.1252
+#    List file     =  
+#        C:\Users\Andrew\Desktop\“ECE-306_CodeProject_01
+#        directory\Homework_6\Debug\List\functions.lst
+#    Object file   =  
+#        C:\Users\Andrew\Desktop\“ECE-306_CodeProject_01
+#        directory\Homework_6\Debug\Obj\functions.r43
+#
+###############################################################################
+
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none
